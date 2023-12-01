@@ -18,15 +18,15 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Rockstar Music'),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage();
 
-  final String title;
+
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -48,7 +48,6 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Center(
           child: Column(
             children: [
-
               TextButton(
                 style: TextButton.styleFrom(
                     backgroundColor: Colors.red,
@@ -59,7 +58,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   final player = AudioPlayer();
                   await player.play(AssetSource('note1.wav'));
                 },
-
               ),
               TextButton(
                 style: TextButton.styleFrom(
@@ -71,7 +69,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   final player = AudioPlayer();
                   await player.play(AssetSource('note2.wav'));
                 },
-
               ),
               TextButton(
                 style: TextButton.styleFrom(
@@ -83,7 +80,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   final player = AudioPlayer();
                   await player.play(AssetSource('note3.wav'));
                 },
-
               ),
               TextButton(
                 style: TextButton.styleFrom(
@@ -95,7 +91,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   final player = AudioPlayer();
                   await player.play(AssetSource('note4.wav'));
                 },
-
               ),
               TextButton(
                 style: TextButton.styleFrom(
@@ -107,7 +102,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   final player = AudioPlayer();
                   await player.play(AssetSource('note5.wav'));
                 },
-
               ),
               TextButton(
                 style: TextButton.styleFrom(
@@ -119,7 +113,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   final player = AudioPlayer();
                   await player.play(AssetSource('note6.wav'));
                 },
-
               ),
               TextButton(
                 style: TextButton.styleFrom(
@@ -131,9 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   final player = AudioPlayer();
                   await player.play(AssetSource('note7.wav'));
                 },
-
               ),
-
             ],
           ),
         ),
@@ -143,19 +134,4 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class NewWidget extends StatelessWidget {
-  const NewWidget({
-    super.key,
-    required this.widget,
-  });
 
-  final MyHomePage widget;
-
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-      backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      title: Text(widget.title),
-    );
-  }
-}
