@@ -26,8 +26,6 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   const MyHomePage();
 
-
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -41,9 +39,25 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void playSound(int soundNumber) async{
+  void playSound(int soundNumber) async {
     final player = AudioPlayer();
     await player.play(AssetSource('note$soundNumber.wav'));
+  }
+
+  Expanded buildKey(Colors, int soundNumber) {
+    return Expanded(
+      child: TextButton(
+        style: TextButton.styleFrom(
+            backgroundColor: Colors,
+            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.zero))),
+        child: const Text(""),
+        onPressed: () {
+          playSound(soundNumber);
+        },
+      ),
+    );
   }
 
   @override
@@ -57,103 +71,13 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Expanded(
-                child: TextButton(
-                  style: TextButton.styleFrom(
-                      backgroundColor: Colors.red,
-                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.zero))),
-                  child: const Text(""),
-                  onPressed: ()  {
-                   playSound(1);
-                  },
-                ),
-              ),
-              Expanded(
-                child: TextButton(
-                  style: TextButton.styleFrom(
-                      backgroundColor: Colors.orange,
-                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                
-                      shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.zero))),
-                  child: const Text(""),
-                  onPressed: ()  {
-                    playSound(2);
-                  },
-                ),
-              ),
-              Expanded(
-                child: TextButton(
-                  style: TextButton.styleFrom(
-                      backgroundColor: Colors.yellow,
-                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                
-                      shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.zero))),
-                  child: const Text(""),
-                  onPressed: ()  {
-                    playSound(3);
-                  },
-                ),
-              ),
-              Expanded(
-                child: TextButton(
-                  style: TextButton.styleFrom(
-                      backgroundColor: Colors.green,
-                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                
-                      shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.zero))),
-                  child: const Text(""),
-                  onPressed: ()  {
-                  playSound(4);
-                  },
-                ),
-              ),
-              Expanded(
-                child: TextButton(
-                  style: TextButton.styleFrom(
-                      backgroundColor: Colors.teal,
-                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                
-                      shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.zero))),
-                  child: const Text(""),
-                  onPressed: ()  {
-                    playSound(5);
-                  },
-                ),
-              ),
-              Expanded(
-                child: TextButton(
-                  style: TextButton.styleFrom(
-                      backgroundColor: Colors.blue,
-                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                
-                      shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.zero))),
-                  child: const Text(""),
-                  onPressed: ()  {
-                    playSound(6);
-                  },
-                ),
-              ),
-              Expanded(
-                child: TextButton(
-                  style: TextButton.styleFrom(
-                      backgroundColor: Colors.purple,
-                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                
-                      shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.zero))),
-                  child: const Text(""),
-                  onPressed: ()  {
-                    playSound(7);
-                  },
-                ),
-              ),
+              buildKey(Colors.red, 1),
+              buildKey(Colors.orange, 2),
+              buildKey(Colors.yellow, 3),
+              buildKey(Colors.green, 4),
+              buildKey(Colors.teal, 5),
+              buildKey(Colors.blue, 6),
+              buildKey(Colors.purple, 7),
             ],
           ),
         ),
@@ -162,5 +86,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-
