@@ -11,9 +11,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
-
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -46,22 +44,98 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: SafeArea(
         child: Center(
-         child: Column(
-           children: [
-            TextButton(
-               onPressed: () async {
-                 final player = AudioPlayer();
-                 await player.play(AssetSource('note1.wav'));
+          child: Column(
+            children: [
 
-                 print('I got clicked');
-               },
-               child: Text('TextButton'),
-             ),
-           ],
-         ),
+              TextButton(
+                style: TextButton.styleFrom(
+                    backgroundColor: Colors.red,
+                    shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.zero))),
+                child: const Text(""),
+                onPressed: () async {
+                  final player = AudioPlayer();
+                  await player.play(AssetSource('note1.wav'));
+                },
+
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                    backgroundColor: Colors.orange,
+                    shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.zero))),
+                child: const Text(""),
+                onPressed: () async {
+                  final player = AudioPlayer();
+                  await player.play(AssetSource('note2.wav'));
+                },
+
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                    backgroundColor: Colors.yellow,
+                    shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.zero))),
+                child: const Text(""),
+                onPressed: () async {
+                  final player = AudioPlayer();
+                  await player.play(AssetSource('note3.wav'));
+                },
+
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                    backgroundColor: Colors.green,
+                    shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.zero))),
+                child: const Text(""),
+                onPressed: () async {
+                  final player = AudioPlayer();
+                  await player.play(AssetSource('note4.wav'));
+                },
+
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                    backgroundColor: Colors.teal,
+                    shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.zero))),
+                child: const Text(""),
+                onPressed: () async {
+                  final player = AudioPlayer();
+                  await player.play(AssetSource('note5.wav'));
+                },
+
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.zero))),
+                child: const Text(""),
+                onPressed: () async {
+                  final player = AudioPlayer();
+                  await player.play(AssetSource('note6.wav'));
+                },
+
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                    backgroundColor: Colors.purple,
+                    shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.zero))),
+                child: const Text(""),
+                onPressed: () async {
+                  final player = AudioPlayer();
+                  await player.play(AssetSource('note7.wav'));
+                },
+
+              ),
+
+            ],
+          ),
         ),
       ),
       // This trailing comma makes auto-formatting nicer for build methods.
