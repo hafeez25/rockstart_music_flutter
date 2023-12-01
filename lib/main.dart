@@ -41,6 +41,11 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void playSound(int soundNumber) async{
+    final player = AudioPlayer();
+    await player.play(AssetSource('note$soundNumber.wav'));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,9 +59,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.zero))),
                 child: const Text(""),
-                onPressed: () async {
-                  final player = AudioPlayer();
-                  await player.play(AssetSource('note1.wav'));
+                onPressed: ()  {
+                 playSound(1);
                 },
               ),
               TextButton(
@@ -65,9 +69,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.zero))),
                 child: const Text(""),
-                onPressed: () async {
-                  final player = AudioPlayer();
-                  await player.play(AssetSource('note2.wav'));
+                onPressed: ()  {
+                  playSound(2);
                 },
               ),
               TextButton(
@@ -76,9 +79,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.zero))),
                 child: const Text(""),
-                onPressed: () async {
-                  final player = AudioPlayer();
-                  await player.play(AssetSource('note3.wav'));
+                onPressed: ()  {
+                  playSound(3);
                 },
               ),
               TextButton(
@@ -87,9 +89,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.zero))),
                 child: const Text(""),
-                onPressed: () async {
-                  final player = AudioPlayer();
-                  await player.play(AssetSource('note4.wav'));
+                onPressed: ()  {
+                playSound(4);
                 },
               ),
               TextButton(
@@ -98,9 +99,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.zero))),
                 child: const Text(""),
-                onPressed: () async {
-                  final player = AudioPlayer();
-                  await player.play(AssetSource('note5.wav'));
+                onPressed: ()  {
+                  playSound(5);
                 },
               ),
               TextButton(
@@ -109,9 +109,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.zero))),
                 child: const Text(""),
-                onPressed: () async {
-                  final player = AudioPlayer();
-                  await player.play(AssetSource('note6.wav'));
+                onPressed: ()  {
+                  playSound(6);
                 },
               ),
               TextButton(
@@ -120,9 +119,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.zero))),
                 child: const Text(""),
-                onPressed: () async {
-                  final player = AudioPlayer();
-                  await player.play(AssetSource('note7.wav'));
+                onPressed: ()  {
+                  playSound(7);
                 },
               ),
             ],
